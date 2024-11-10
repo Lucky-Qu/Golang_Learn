@@ -18,9 +18,9 @@ func (aboutHandle) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	//新建服务器
+	//新建服务器,监听localhost的8080端口，Handler填写nil表示调用DefaultServeMux
 	server := http.Server{Addr: "localhost:8080", Handler: nil}
-	//注册Handle
+	//注册Handle到DefaultServeMux
 	http.Handle("/hello", helloHandle{})
 	http.Handle("/about", aboutHandle{})
 	//开启服务器
