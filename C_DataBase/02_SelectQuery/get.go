@@ -18,3 +18,14 @@ func getOne(id int) (User, error) {
 	}
 	return user, nil
 }
+
+func getMany(id int) ([]User, error) {
+	var users []User
+	rows, err := db.Query("SELECT id, name, age, sex, hobbies FROM users WHERE id>?", id)
+	for rows.Next() {
+		u := User{}
+		rows.Scan(&u.Id, &u.Name, &u.Age, &u.Sex, &u.Hobbies)
+		users = append(users, u)
+	}
+	return users, err
+}

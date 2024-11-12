@@ -9,7 +9,7 @@ import (
 
 func main() {
 	var err error
-	db, err = sql.Open("mysql", "root:secret@/Learn")
+	db, err = sql.Open("mysql", "root:Secret@/Learn")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -23,4 +23,9 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println(u)
+	t, err := getMany(0)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(t)
 }
