@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("mysql", "root:secret@/mysql")
+	db, err := sql.Open("mysql", "user:password@/table")
 	if err != nil {
 		fmt.Println(err)
 	}

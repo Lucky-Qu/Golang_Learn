@@ -9,7 +9,7 @@ import (
 
 func main() {
 	var err error
-	db, err = sql.Open("mysql", "root:Secret@/Learn")
+	db, err = sql.Open("mysql", "user:password@/table")
 	if err != nil {
 		fmt.Println(err)
 	}
